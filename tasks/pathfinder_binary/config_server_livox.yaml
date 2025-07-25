@@ -1,0 +1,102 @@
+# common config
+save_path: "../../experiments/PMF-binary-bhvit/"
+seed: 1
+gpu: "0"
+print_frequency: 5
+n_threads: 1
+experiment_id: "baseline_timestamp"
+
+# data config
+val_only: false
+has_label: true
+has_imgmask: true
+is_debug: false
+n_epochs: 100
+batch_size: [2, 2]
+lr: 0.001
+warmup_epochs: 1
+momentum: 0.9
+weight_decay: 0.0001  # Manual weight_decay for SGD optimizer (image-specific)
+val_frequency: 1
+
+dataset: "Livox"
+nclasses: 3  # LiDAR: 3 classes, Image: 2 classes (LiDAR adds void points as class 0)
+data_root: "/home/m/Documents/GitHub/PMF_series/PMF_mainWorkSpace/data/livox/sequences"
+#data_root: "/home/m/Documents/GitHub/PMF_series/PMF_mainWorkSpace/data/sample/sequences"
+
+base_channels: 32
+img_backbone: "resnet34"
+#imagenet_pretrained: true
+
+lambda: 1.0  # Weight of lovasz-softmax loss
+gamma: 0.5  # Weight of perception-aware loss & image focal loss
+tau: 0.8  # Confidence threshold
+
+# checkpoint model
+checkpoint: null
+pretrained_model: null
+
+### data augmentation config ---------------------
+augmentation:
+  # flip
+  p_flipx: 0
+  p_flipy: 0
+
+  # translation
+  p_transx: 0
+  trans_xmin: 0
+  trans_xmax: 0
+  p_transy: 0
+  trans_ymin: 0
+  trans_ymax: 0
+  p_transz: 0
+  trans_zmin: 0
+  trans_zmax: 0
+
+  # rotation
+  p_rot_roll: 0
+  rot_rollmin: 0
+  rot_rollmax: 0
+  p_rot_pitch: 0
+  rot_pitchmin: 0
+  rot_pitchmax: 0
+  p_rot_yaw: 0
+  rot_yawmin: 0
+  rot_yawmax: 0
+
+  # img jitter
+  img_jitter: [0.4, 0.4, 0.4]
+
+sensor:
+  name: "AVIA"
+  type: "perception-aware"
+  # crop size for validation samples
+  proj_h: 512
+  proj_w: 512
+  # crop size for training samples
+  proj_ht: 512
+  proj_wt: 512
+  h_pad: 0
+  w_pad: 0
+
+  # Image mean and std (image essentially represents point cloud)
+  img_mean:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  img_stds:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+post:
+  KNN:
+    use: false  # Default value is false
+    params:
+      knn: 5
+      search: 5
+      sigma: 1.0
+      cutoff: 1.0

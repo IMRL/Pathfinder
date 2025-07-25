@@ -1,12 +1,43 @@
-# "Pathfinder for Low-altitude Aircraft with Binary Neural Network", Kaijie Yin, Tian Gao, and Hui Kong, https://arxiv.org/pdf/2409.08824, under review, 2025
+# Pathfinder
 
-\Abstract\: 
-A prior global topological map (e.g., the OpenStreetMap, OSM) can boost the performance of autonomous mapping by a ground mobile robot. However, the prior map is usually incomplete due to lacking labeling in partial paths. To solve this problem, this paper proposes an OSM maker using airborne sensors carried by low-altitude aircraft, where the core of the OSM maker is a novel efficient pathfinder approach based on LiDAR and camera data, i.e., a binary dual-stream road segmentation model. Specifically, a multi-scale feature extraction based on the UNet architecture is implemented for images and point clouds. To reduce the effect caused by the sparsity of point cloud, an attention-guided gated block is designed to integrate image and point-cloud features. To optimize the model for edge deployment that significantly reduces storage footprint and computational demands, we propose a binarization streamline to each model component, including a variant of vision transformer (ViT) architecture as the encoder of the image branch, and new focal and perception losses to optimize the model training. The experimental results on two datasets demonstrate that our pathfinder method achieves SOTA accuracy with high efficiency in finding paths from the low-level airborne sensors, and we can create complete OSM prior maps based on the segmented road skeletons. Code and data are available at: \href{https://github.com/IMRL/Pathfinder}{https://github.com/IMRL/Pathfinder}.
-
+This code is an implementation of our work "[Pathfinder for Low-altitude Aircraft with Binary Neural Network](https://arxiv.org/pdf/2409.08824)", published in IROS 2025.
 
 [![Pathfinder for Low-altitude Aircraft with Binary Neural Network](cover.jpg)](https://youtu.be/S4_61Q83noM "Pathfinder for Low-altitude Aircraft with Binary Neural Network")
 
+![](https://raw.githubusercontent.com/exaids66/imgs/main/images/pathfinder_teaser.png)
 
+## Citation
+
+If you find our code useful for your research, please consider citing:
+
+    @inproceedings{yin2020pathfinder,
+      title={Pathfinder for Low-altitude Aircraft with Binary Neural Network},
+      author={Yin, Kaijie and Gao, Tian and Kong, Hui},
+      booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+      year={2025}
+    }
+
+## Prepare
+
+### 1. Requirements:
+
+- PyTorch (version 2.5.1)
+- numpy
+- timm
+- transformers (version 4.39.2)
+
+### 2. Data:
+
+- We currently provide the RS-LVF dataset: [GoogleDrive](https://drive.google.com/drive/folders/1m90p0mHoYcW7O2E8f-7LoeX5GuJCEmuw?usp=sharing)
+
+## Models
+
+- RS-LVF: [GoogleDrive](https://drive.google.com/drive/folders/1DyRSfZthKfNTzZmp4pAsqmNMlNsrkayV?usp=sharing)
+- SensatUrban: [GoogleDrive](https://drive.google.com/drive/folders/1-JYUPwwEtgK1ko33qrevM13q0IB67zxk?usp=sharing)
+
+##  Contact
+
+Any problem, please contact the first author (Email: yin.kaijie at connect.um.edu.mo)
 
 
 
