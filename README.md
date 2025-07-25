@@ -10,7 +10,7 @@ This code is an implementation of our work "[Pathfinder for Low-altitude Aircraf
 
 If you find our code useful for your research, please consider citing:
 
-    @inproceedings{yin2020pathfinder,
+    @inproceedings{yin2025pathfinder,
       title={Pathfinder for Low-altitude Aircraft with Binary Neural Network},
       author={Yin, Kaijie and Gao, Tian and Kong, Hui},
       booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
