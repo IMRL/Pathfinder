@@ -35,6 +35,12 @@ If you find our code useful for your research, please consider citing:
 - RS-LVF: [GoogleDrive](https://drive.google.com/drive/folders/1DyRSfZthKfNTzZmp4pAsqmNMlNsrkayV?usp=sharing)
 - SensatUrban: [GoogleDrive](https://drive.google.com/drive/folders/1-JYUPwwEtgK1ko33qrevM13q0IB67zxk?usp=sharing)
 
+## Acknowledgements
+
+Our code refers to [PMF](https://github.com/ICEORY/PMF) and [BHViT](https://github.com/IMRL/BHViT/tree/main).
+
+Our dataset refers to [MARS-LVIG Dataset](https://mars.hku.hk/dataset.html).
+
 ##  Contact
 
 Any problem, please contact the first author (Email: yin.kaijie at connect.um.edu.mo)
